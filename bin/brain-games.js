@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import callName from '../src/cli.js'
+import callName from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!')
-callName()
+console.log('Welcome to the Brain Games!');
+callName();
