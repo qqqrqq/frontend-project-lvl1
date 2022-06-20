@@ -1,38 +1,28 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync';
+
 import greeting from '../src/cli.js';
+import logic from '../src/index.js';
 
-let userName = greeting()
+const startEvenGame = () => {
+  const userName = greeting();
+  const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const startEvenGame = (userName) => {
+  const correctAnswerFunc = () => {
+    const result = [];
+    const number = Math.round(Math.random() * 100);
 
-    console.log('Answer "yes" if the number is even, otherwise answer "no".')
+    const correctAnswer = number % 2 === 0
+      ? 'yes'
+      : 'no';
+    const question = number;
+    result.push(question, correctAnswer);
+    return result;
+  };
 
-    let score = 0
+  const elements = [userName, correctAnswerFunc];
+  logic(descriptionGame, elements);
+};
 
-    do{
-        const number = Math.round(Math.random()*100)
-        let correctAnswer
-        number % 2 === 0 ? correctAnswer = 'yes' : correctAnswer = 'no'
-        console.log(`Question: ${number}`)
-        const userAnswer = readlineSync.question(`Your answer: `)
+startEvenGame();
 
-        if(userAnswer === correctAnswer){
-            console.log('Correct!')
-            score++
-            if(score === 3){
-                console.log(`Congratulations, ${userName}!`)
-                break
-            }
-        }
-        else{
-            console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`)
-            console.log(`Let's try again ${userName}`)
-            break
-        }
-    } while(score <= 3)
-}
-
-startEvenGame(userName)
-
-export default startEvenGame
+export default startEvenGame;
