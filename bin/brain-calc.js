@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-import greeting from '../src/cli.js';
 import logic from '../src/index.js';
 
 const brainCalc = () => {
-  const userName = greeting();
   const descriptionGame = 'What is the result of the expression?';
 
   const correctAnswerFunc = () => {
@@ -31,8 +29,8 @@ const brainCalc = () => {
     result.push(question, correctAnswer);
     return result;
   };
-  const elements = [userName, correctAnswerFunc];
-  logic(descriptionGame, elements);
+
+  logic(descriptionGame, correctAnswerFunc);
 };
 
 brainCalc();

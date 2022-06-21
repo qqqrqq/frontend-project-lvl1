@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
-const logic = (descriptionGame, elements) => {
+const logic = (descriptionGame, operation) => {
+  const userName = greeting();
   console.log(descriptionGame);
-  const [userName, operation] = elements;
 
   let score = 0;
   do {

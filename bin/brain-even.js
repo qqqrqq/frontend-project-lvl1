@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-import greeting from '../src/cli.js';
 import logic from '../src/index.js';
 
 const startEvenGame = () => {
-  const userName = greeting();
   const descriptionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const correctAnswerFunc = () => {
@@ -19,8 +17,7 @@ const startEvenGame = () => {
     return result;
   };
 
-  const elements = [userName, correctAnswerFunc];
-  logic(descriptionGame, elements);
+  logic(descriptionGame, correctAnswerFunc);
 };
 
 startEvenGame();
