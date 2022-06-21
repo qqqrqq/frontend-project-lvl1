@@ -13,15 +13,16 @@ const logic = (descriptionGame, operation) => {
     if (userAnswer === String(correctAnswer)) {
       console.log('Correct!');
       score += 1;
-    } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
-      console.log(`Let's try again ${userName}`);
-      break;
-    }
+      continue
+    } 
     if (score === 3) {
       console.log(`Congratulations, ${userName}!`);
       break;
     }
+    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
+    console.log(`Let's try again ${userName}`);
+    break;
+    
   } while (score <= 3);
 };
 
