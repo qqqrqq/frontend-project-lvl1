@@ -4,13 +4,13 @@ import logic from '../src/index.js';
 
 const brainCalc = () => {
   const descriptionGame = 'What is the result of the expression?';
-
   const correctAnswerFunc = () => {
     const result = [];
     const num1 = Math.round(Math.random() * 100);
     const num2 = Math.round(Math.random() * 100);
     const operationsArr = ['+', '-', '*'];
-    const operation = operationsArr[Math.floor(Math.random() * operationsArr.length)];
+    const randomIndexOperation = Math.floor(Math.random() * operationsArr.length);
+    const operation = operationsArr[randomIndexOperation];
     const question = `${num1} ${operation} ${num2}`;
     let correctAnswer;
     switch (operation) {
