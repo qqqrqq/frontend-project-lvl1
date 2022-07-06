@@ -7,6 +7,7 @@ const brainPrime = () => {
   const correctAnswerFunc = () => {
     const result = [];
     let count = 0;
+    const numb = Math.round(Math.random() * 100);
     for (let i = 0; i < numb; i += 1) {
       if (numb % i === 0) {
         count += 1;
