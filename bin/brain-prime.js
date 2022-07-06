@@ -6,9 +6,14 @@ const brainPrime = () => {
 
   const correctAnswerFunc = () => {
     const result = [];
-    const numb = Math.round(Math.random() * 100);
-    const correctAnswer = numb % 2 === 0 ? 'no' : 'yes';
+    let count = 0;
+    for (let i = 0; i < numb; i += 1) {
+      if (numb % i === 0) {
+        count += 1;
+      }
+    }
 
+    const correctAnswer = count > 1 ? 'no' : 'yes';
     result.push(numb, correctAnswer);
     return result;
   };
